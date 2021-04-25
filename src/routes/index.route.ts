@@ -1,8 +1,6 @@
 import { Router } from 'express';
 import IndexController from '@controllers/index.controller';
 import Route from '@interfaces/routes.interface';
-import * as Git from 'nodegit'
-
 class IndexRoute implements Route {
   public path = '/';
   public router = Router();
