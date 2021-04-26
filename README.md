@@ -19,7 +19,8 @@ Server and Database connection for Procure Browser extension project
 `yarn deploy` to deploy built image to AWS ECS
 
 ## Architecture
-[https://lucid.app/documents/embeddedchart/ccfe4ca1-ffe6-4e67-ae3f-ad2a68170653" id="Vndx~CRsn5po"](https://lucid.app/documents/embeddedchart/ccfe4ca1-ffe6-4e67-ae3f-ad2a68170653" id="Vndx~CRsn5po")
+<img width="940" alt="Screen Shot 2021-04-26 at 6 21 42 PM" src="https://user-images.githubusercontent.com/13711827/116162881-4664b680-a6bc-11eb-90e8-e1243838a167.png">
+
 ## Swagger
 Available locally at [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
 ## Sample request to load balancer of deployed app
