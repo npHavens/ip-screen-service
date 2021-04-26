@@ -10,7 +10,9 @@
     "build": "tsc && npx tsc-alias",
     "test": "jest --forceExit --detectOpenHandles",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "docker": "docker build -t ip-screen . && docker run -t -i -p 3000:3000 ip-screen",
+    "deploy": "aws ecr get-login-password | docker login --username AWS --password-stdin 767596259046.dkr.ecr.us-east-1.amazonaws.com/ip-screen:latest && docker tag ip-screen 767596259046.dkr.ecr.us-east-1.amazonaws.com/ip-screen:latest && docker push 767596259046.dkr.ecr.us-east-1.amazonaws.com/ip-screen:latest"
   },
   "dependencies": {
     "@types/nodegit": "^0.27.1",
