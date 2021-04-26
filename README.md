@@ -19,7 +19,7 @@ Server and Database connection for Procure Browser extension project
 `yarn deploy` to deploy built image to AWS ECS
 
 ## Architecture
-<img width="940" alt="Screen Shot 2021-04-26 at 6 21 42 PM" src="https://user-images.githubusercontent.com/13711827/116162881-4664b680-a6bc-11eb-90e8-e1243838a167.png">
+<img width="933" alt="Screen Shot 2021-04-26 at 6 22 38 PM" src="https://user-images.githubusercontent.com/13711827/116162954-6bf1c000-a6bc-11eb-8888-7c138e5c5cc4.png">
 
 ## Swagger
 Available locally at [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
