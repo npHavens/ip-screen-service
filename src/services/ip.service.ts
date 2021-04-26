@@ -41,13 +41,13 @@ class IpService {
             });
 
             for await (const line of lines) {
-              // if line contains source metadata, parse and add to fileData
+              // if line contains source metadata, parse and add to temp fileData
               if (line.includes('#') && line.includes('Maintainer')) {
                   const key = line.split(' : ')[0].trim().split('# ')[1]
                   const value = line.split(' : ')[1].trim()
                   fileData[key] = value
               } else {
-                // fuzzy IP address match 
+                // fuzzy IP address match
                 if (line.match(/^(?:[0-9]{1,3}\.){3}[0-9]{1,3}/)) {
                   // Trim whitespace and hash the IP key to memory with the maintainer name as the value
                   const ip = line.trim()
@@ -78,6 +78,7 @@ class IpService {
 
       setInterval(async () => {
         const repo = await Repository.open(join(__dirname, '../../ipsets'))
+        await repo.fetchAll();
 
         const masterCommit = await repo.getMasterCommit()
         console.log('CHECKING REPO:', lastCommit, masterCommit.sha())
@@ -88,7 +89,6 @@ class IpService {
         if (lastCommit !== masterCommit.sha()) {
           console.log('FOUND NEW COMMIT:', lastCommit, masterCommit.sha())
           lastCommit = masterCommit.sha()
-          await repo.fetchAll();
 
           await this.indexIpData()
         }
