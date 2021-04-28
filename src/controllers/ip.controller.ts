@@ -3,7 +3,7 @@ import { indexedIps } from '../globals'
 
 class IpController {
   public checkIps = async ({ body }: Request, res: Response): Promise<void> => {
-    if (body.ipList || !body.ipList.length) {
+    if (!body.ipList || !body.ipList.length) {
       res.status(400).send('At least 1 IP address must be included in body of request')
     } else {
       const blacklisted = {}
