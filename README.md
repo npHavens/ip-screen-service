@@ -1,6 +1,6 @@
 # ip-screen-service
 
-Server and Database connection for Procure Browser extension project
+Service for screening IP Addresses from the blacklist at [https://github.com/firehol/blocklist-ipsets](https://github.com/firehol/blocklist-ipsets)
 
 ## Prerequisites
 
@@ -23,6 +23,7 @@ Server and Database connection for Procure Browser extension project
 
 ## Swagger
 Available locally at [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
+
 ## Sample request to load balancer of deployed app
 `curl --request POST 'http://ec2co-ecsel-1f4r218iok7rq-2041122609.us-east-1.elb.amazonaws.com:3000/ip' --header 'Content-Type: application/json' --data-raw '{
     "ipList" : [
