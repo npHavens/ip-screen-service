@@ -78,10 +78,11 @@ class IpService {
 
       setInterval(async () => {
         const repo = await Repository.open(join(__dirname, '../../ipsets'))
-        await repo.fetchAll();
-
+        await repo.fetchAll()
+        await repo.mergeBranches('master', 'refs/remotes/origin/master')
         const masterCommit = await repo.getMasterCommit()
         console.log('CHECKING REPO:', lastCommit, masterCommit.sha())
+
         if (!lastCommit) {
           return lastCommit = masterCommit.sha()
         }
