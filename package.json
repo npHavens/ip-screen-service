@@ -11,11 +11,10 @@
     "test": "jest --forceExit --detectOpenHandles",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
     "lint:fix": "npm run lint -- --fix",
-    "docker": "docker build -t ip-screen . && docker run -t -i -p 3000:3000 ip-screen",
+    "docker": "yarn build && docker build -t ip-screen . && docker run -t -i -p 3000:3000 ip-screen",
     "deploy": "aws ecr get-login-password | docker login --username AWS --password-stdin 767596259046.dkr.ecr.us-east-1.amazonaws.com/ip-screen:latest && docker tag ip-screen 767596259046.dkr.ecr.us-east-1.amazonaws.com/ip-screen:latest && docker push 767596259046.dkr.ecr.us-east-1.amazonaws.com/ip-screen:latest"
   },
   "dependencies": {
-    "bcrypt": "^5.0.1",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "compression": "^1.7.4",

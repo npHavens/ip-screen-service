@@ -77,9 +77,8 @@ class IpService {
       let lastCommit
 
       setInterval(async () => {
+        await this.fetchIpData()
         const repo = await Repository.open(join(__dirname, '../../ipsets'))
-        await repo.fetchAll()
-        await repo.mergeBranches('master', 'refs/remotes/origin/master')
         const masterCommit = await repo.getMasterCommit()
         console.log('CHECKING REPO:', lastCommit, masterCommit.sha())
 
