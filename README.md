@@ -40,3 +40,4 @@ Available locally at [http://localhost:3000/api-docs](http://localhost:3000/api-
 - Env variable/secret management
 - API Gateway/SSL
 - Performance of indexing git ip files(Only new changes could be added instead of entire list)
+- Swagger setup and TsDoc
